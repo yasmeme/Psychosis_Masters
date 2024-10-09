@@ -1,3 +1,104 @@
+File path format
+
+
+DWIdata2023
+  included
+    caselist.txt
+    sub-x
+      fixel_in_template_space_HC
+        directions.mif
+        fd_HC.mif
+        index.mif
+      fixel_in_template_space_HCPT
+        directions.mif
+        fd_HCPT.mif
+        index.mif
+      fixel_in_template_space_NOT_REORIENTED_HC
+        directions.mif
+        fd_HC.mif
+        index.mif
+      fixel_in_template_space_NOT_REORIENTED_HCPT
+        directions.mif
+        fd_HCPT.mif
+        index.mif
+      fod_in_template_space_NOT_REORIENTED_HC.mif
+      fod_in_template_space_NOT_REORIENTED_HCPT.mif
+      harmonized_sub-XXXX_b0_unweighted.nii.gz
+      harmonized_sub-XXXX.bvals
+      harmonized_sub-XXXX.bvecs
+      harmonized_sub-XXXX.mif
+      harmonized_sub-XXXX_ses-1_dir-416_desc-XcUnEdEp_dwi.nii.gz
+      sub-XXXX_b1500.mif
+      sub-XXXX_csf_fod.mif
+      sub-XXXX_csffod_norm.mif
+      sub-XXXX_csf.txt
+      sub-XXXX_DT.mif
+      sub-XXXX_dwi_mask_in_template_space_HC.mif
+      sub-XXXX_dwi_mask_in_template_space_HCPT.mif
+      sub-XXXX_FA_in_template_space.mif
+      sub-XXXX_FA.mif
+      sub-XXXX_gm_fod.mif
+      sub-XXXX_gmfod_norm.mif
+      sub-XXXX_gm.txt
+      sub-XXXX_mask_BET_mask.nii.gz
+      sub-XXXX_mask_BET.nii.gz
+      sub-XXXX_mask.mif
+      sub-XXXX_subject2template_warp_HC.mif
+      sub-XXXX_subject2template_warp_HCPT.mif
+      sub-XXXX_template2subject_warp_HC.mif
+      sub-XXXX_template2subject_warp_HCPT.mif
+      sub-XXXX_wm_fod.mif
+      sub-XXXX_wmfod_norm.mif
+      sub-XXXX_wm.txt
+  newmasks   
+  template
+    fod_inputHC_RISH
+    mask_inputHC_RISH
+    resultHC_RISH
+    fd
+    fdc
+    fc
+    matrix
+    stats_fd_RISH
+    stats_fc_RISH
+    stats_fdc_RISH
+    tracks_20_million.tck
+    tracks_20_million_sift.tck
+    tracks_200k_sift.tck
+    wmfod_template.mif
+    files.txt
+    design_matrix_FD.txt
+    design_matrix_FC.txt
+    contrast_matrix_FD.txt
+    contrast_matrix_FC.txt
+  scripts
+    output
+      out_o.%A_%a
+      err_e.%A_%a
+
+
+----------------------------------------------------------------------------------------------------------------
+PRE-PROCESSING
+----------------------------------------------------------------------------------------------------------------
+
+# Define the caselist file path
+caselist=/path/to/data/caselist.txt
+
+home=/data/gpfs/projects/punim1958/DWIdata2023/newmasks
+
+echo ${case}
+
+module load fsl/6.0.1-python-3.7.4
+
+fslroi ${home}/${case}*.nii.gz ${home}/${case}_b0_unweighted 0 1
+
+bet ${home}/${case}_b0_unweighted ${home}/${case}_mask_BET -m -R -f 0.2 -g -0.05
+
+
+while read line; do
+mrconvert ${home}/${line}/harmonized_${line}*_dwi.nii.gz ${home}/${line}/harmonized_${line}.mif -fslgrad ${home}/${line}/harmonized_${line}*_dwi.bvec ${home}/${line}/harmonized_${line}*_dwi.bval -force
+done < ${home}/caselist.txt
+
 ------------------------------------------------------------------------------------------------------------------
 CSD MODELLING
 ------------------------------------------------------------------------------------------------------------------
