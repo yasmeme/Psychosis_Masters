@@ -15,7 +15,7 @@ echo ${start}
 
 echo ${SLURM_ARRAY_TASK_ID}
 
-home=/data/gpfs/projects/punim1958/DWIdata2023/template
+home=/DWIdata2023/template
 
 #modules to load
 module load MRtrix/3.0.4
