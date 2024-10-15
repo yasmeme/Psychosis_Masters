@@ -7,7 +7,7 @@
 #SBATCH -o output/out_FA.%A_%a
 #SBATCH -e output/err_FA.%A_%a
 
-caselist=/data/gpfs/projects/punim1958/DWIdata2023/harmonized_data/included/caselist.txt
+caselist=/DWIdata2023/harmonized_data/included/caselist.txt
 
 # the following code prints the date
 start=`date +%s`
