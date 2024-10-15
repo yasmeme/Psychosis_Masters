@@ -7,10 +7,10 @@ library(dplyr)
 library(ggplot2)
 library(patchwork)
 
-fbameans <- read_csv("/home/gucci/Documents/input/nicotine_fba_means.csv")
-fbasigmeans <- read_csv("/home/gucci/Documents/input/nicotine_fba_sig_means.csv")
-tobacco <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-OlfactoryQuestionnai_DATA_2023-06-05_0228.csv")
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+fbameans <- read_csv("nicotine_fba_means.csv")
+fbasigmeans <- read_csv("nicotine_fba_sig_means.csv")
+tobacco <- read_csv("HumanConnectomeProje-OlfactoryQuestionnai_DATA_2023-06-05_0228.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
 names(tobacco)[1] <- "ID"
 names(demog)[1] <- "ID"
 tobacco$ID <- substring(tobacco$ID, 1, nchar(tobacco$ID) -2)
