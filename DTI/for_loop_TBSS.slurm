@@ -7,8 +7,8 @@
 #SBATCH -o output/out_TBSS.%A_%a
 #SBATCH -e output/err_TBSS.%A_%a
 
-home=/data/gpfs/projects/punim1958/DWIdata2023/yasmin
-caselist=/data/gpfs/projects/punim1958/DWIdata2023/yasmin/mytbss/caselist.txt
+home=/DWIdata2023/yasmin
+caselist=//DWIdata2023/yasmin/mytbss/caselist.txt
 case=`head -${SLURM_ARRAY_TASK_ID} ${caselist} | tail -1`
 
 # the following code prints the date
