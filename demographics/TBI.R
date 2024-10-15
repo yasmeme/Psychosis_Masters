@@ -9,9 +9,9 @@ library(dplyr)
 library(writexl)
 
 #read files in
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-tbi <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-TBIScreenSummaryUpda_DATA_2023-06-05_0223.csv")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+tbi <- read_csv("HumanConnectomeProje-TBIScreenSummaryUpda_DATA_2023-06-05_0223.csv")
+subs <- read_csv("caselist.csv")
 
 #list of subjects with imaging data from spartan (excluding subjects with poor image quality)
 #made using ls > subjects.txt
@@ -27,7 +27,7 @@ total <- total[ which(!is.na(total$Group)),  ]
 tbi2 <- as.data.frame(cbind(total$ID, total$Group, total$Age, total$Sex, total$tbi_number_inj, total$age_first_inj, total$age_recent_inj, total$tbi_severity_rating))
 names(tbi2) <- c("ID", "Group", "Age", "Sex", "Number of TBIs", "Age of First TBI", "Age of Most Recent TBI", "TBI Severity")
 tbi2 <- subset(tbi2, tbi2$`Number of TBIs` > 0)
-write_xlsx(tbi2,"/home/gucci/Documents/matrices/tbi.xlsx")
+write_xlsx(tbi2,"tbi.xlsx")
 
 #initialise group variable
 Group = rep(NA,length(tbi2$ID))
