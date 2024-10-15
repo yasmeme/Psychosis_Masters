@@ -1,3 +1,5 @@
+# script used to find and tabulate missing data
+
 rm(list=ls())
 #load required libraries
 library(tidyverse)
