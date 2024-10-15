@@ -8,8 +8,8 @@ library(tidyr)
 library(dplyr)
 
 #read in excel file
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+subs <- read_csv("caselist.csv")
 
 #only import subjects with imaging data listed in miss
 demog <- demog[(demog$ID %in% subs$ID),]
@@ -48,11 +48,11 @@ best_matched_group_0 <- group_0[1:40, ]
 best_matched_group_1 <- group_1[1:40, ]
 
 #print matched data
-write_xlsx(matched.data,"/home/gucci/Documents/PSM/matched.data.xlsx")
+write_xlsx(matched.data,"~/matched.data.xlsx")
 
 #print 20 best matches for each group
-write_xlsx(best_matched_group_0,"/home/gucci/Documents/PSM/best_matched_group_0.xlsx")
-write_xlsx(best_matched_group_1,"/home/gucci/Documents/PSM/best_matched_group_1.xlsx")
+write_xlsx(best_matched_group_0,"~/best_matched_group_0.xlsx")
+write_xlsx(best_matched_group_1,"~/best_matched_group_1.xlsx")
 
 #combine race variables into a single dataframe
 race_df = as.data.frame(cbind(demog$Race_Black_or_African_American, demog$Race_Asian, 
