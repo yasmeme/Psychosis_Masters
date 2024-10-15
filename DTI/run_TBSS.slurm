@@ -8,8 +8,8 @@
 #SBATCH -o output/out_TBSS.%A_%a
 #SBATCH -e output/err_TBSS.%A_%a
 
-home=/data/gpfs/projects/punim1958/DWIdata2023/yasmin/mytbss/stats
-caselist=/data/gpfs/projects/punim1958/DWIdata2023/yasmin/mytbss/caselist.txt
+home=/DWIdata2023/yasmin/mytbss/stats
+caselist=/DWIdata2023/yasmin/mytbss/caselist.txt
 
 
 # the following code prints the date
