@@ -15,8 +15,8 @@ echo ${start}
 
 echo ${SLURM_ARRAY_TASK_ID}
 
-home=/data/gpfs/projects/punim1958/DWIdata2023/harmonized_data/included
-yasmin=/data/gpfs/projects/punim1958/DWIdata2023/template/2024_stats
+home=/DWIdata2023/harmonized_data/included
+yasmin=/DWIdata2023/template/2024_stats
 
 #modules to load
 module load MRtrix/3.0.4
