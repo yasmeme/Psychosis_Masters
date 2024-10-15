@@ -9,8 +9,8 @@ library(patchwork)
 library(stringr)
 
 # Dataframes --------------------------------------------------------------
-ormeans <- read_csv("/home/gucci/Documents/input/OR_fba_means.csv")
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+ormeans <- read_csv("OR_fba_means.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
 tobacco <- read_csv("HumanConnectomeProje-OlfactoryQuestionnai_DATA_2023-06-05_0228.csv")
 panss <- read_csv("HumanConnectomeProje-PANSSUpdatedNDAJuly2_DATA_2023-08-07_0217.csv")
 scid <- read_csv("HumanConnectomeProje-SCID5NDAJuly2023_DATA_2023-08-28_0342.csv")
