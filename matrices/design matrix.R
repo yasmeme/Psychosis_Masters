@@ -9,9 +9,9 @@ library(Jmisc)
 library(normalize)
 
 #import demog and subjects with imaging data
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
-tiv <- read_csv("/home/gucci/Documents/input/asegstats.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+subs <- read_csv("caselist.csv")
+tiv <- read_csv("asegstats.csv")
 
 #list of subjects with imaging data from spartan (excluding subjects with poor image quality)
 #made using ls > subjects.txt
@@ -63,7 +63,7 @@ subjects <- as.data.frame(demog$ID)
 names(subjects) <- c("subjects")
 
 #print into subjects file for fixelcfestats command
-write_xlsx(subjects,"/home/gucci/Documents/matrices/subjects.xlsx")
+write_xlsx(subjects,"~/subjects.xlsx")
 
 #create design matrix for fixelcfestats command
 scanner2 <- as.data.frame(cbind(subjects, patient, control, demog$Age, demog$Sex, demog$EstimatedTotalIntraCranialVol))
