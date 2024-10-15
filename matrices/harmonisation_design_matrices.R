@@ -11,9 +11,9 @@ library(ggplot2)
 library(normalize)
 
 #import demog and subjects with imaging data
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-subs <- read_excel("/home/gucci/Documents/input/public_data_subs.xlsx")
-tiv <- read_csv("/home/gucci/Documents/input/asegstats.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+subs <- read_excel("public_data_subs.xlsx")
+tiv <- read_csv("asegstats.csv")
 
 names(tiv)[1] <- "ID"
 names(subs)[1] <- "ID"
@@ -57,7 +57,7 @@ subjects <- as.data.frame(demog$ID)
 names(subjects) <- c("subjects")
 
 #print into subjects file for fixelcfestats command
-write_xlsx(subjects,"/home/gucci/Documents/matrices/subjects.xlsx")
+write_xlsx(subjects,"~/subjects.xlsx")
 
 #create design matrix for fixelcfestats command
 scanner2 <- as.data.frame(cbind(patient, control, demog$Age, demog$Sex, scanner, demog$EstimatedTotalIntraCranialVol))
@@ -75,4 +75,4 @@ ggplot(scanner2, aes(x= TIV)) +
        y= "frequency")
 
 #print design matrix
-write_xlsx(scanner2,"/home/gucci/Documents/matrices/design_matrixFC.xlsx")
+write_xlsx(scanner2,"~/design_matrixFC.xlsx")
