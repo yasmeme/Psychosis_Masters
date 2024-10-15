@@ -25,20 +25,19 @@ VBA - WHOLE BRAIN
 
 yasmin=/DWIdata2023/template/2024_stats
 
-#modules to load
-module load MRtrix/3.0.4
-
-mrclusterstats ${home}/input_files_nicotine_FA.txt ${yasmin}/nicotine/design_matrix_FD.txt ${yasmin}/nicotine/contrast_matrix_FD.txt ${yasmin}/padded_WM_mask.mif ${yasmin}/nicotine/stats_FA/FA_ -force -nthreads 15 -nshuffles 5000
+mrclusterstats ${home}/input_files_wholebrain_FA.txt ${yasmin}/wholebrain_FA/design_matrix_FD.txt ${yasmin}/nicotine/contrast_matrix_FD.txt ${yasmin}/padded_WM_mask.mif ${yasmin}/wholebrain_FA/stats_FA/FA_ -force -nthreads 15 -nshuffles 5000
 
 ----------------------------------------------------------------------------------------------------------------
 VBA - NICOTINE
 ----------------------------------------------------------------------------------------------------------------
 
-
+mrclusterstats ${home}/input_files_nicotine_FA.txt ${yasmin}/nicotine/design_matrix_FD.txt ${yasmin}/nicotine/contrast_matrix_FD.txt ${yasmin}/padded_WM_mask.mif ${yasmin}/nicotine/stats_FA/FA_ -force -nthreads 15 -nshuffles 5000
 
 ----------------------------------------------------------------------------------------------------------------
 VBA - CANNABIS
 ----------------------------------------------------------------------------------------------------------------
+
+mrclusterstats ${home}/input_files_cb_FA.txt ${yasmin}/cannabis/design_matrix_FD.txt ${yasmin}/cannabis/contrast_matrix_FD.txt ${yasmin}/padded_WM_mask.mif ${yasmin}/cannabis/stats_FA/FA_ -force -nthreads 15 -nshuffles 5000
 
 ----------------------------------------------------------------------------------------------------------------
 TBSS - WHOLE BRAIN
