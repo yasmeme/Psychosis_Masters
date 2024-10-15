@@ -1,3 +1,6 @@
+#This script was used to calculate and visualise the percentage of total 
+#significant fixels by tract type for each FBA metric
+
 rm(list=ls())
 # Load required libraries
 library(gtsummary)
@@ -151,5 +154,5 @@ percentage_fc_subset <- fc %>% filter(grepl("Unclassified", TractGroup)) %>% pul
 sum(percentage_fc_subset)
 
 # Save the plot
-ggsave("/home/gucci/Documents/fd_tracts.tiff", width = 8, height = 20)
+ggsave("fd_tracts.tiff", width = 8, height = 20)
 
