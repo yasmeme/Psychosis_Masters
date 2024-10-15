@@ -1,3 +1,6 @@
+# This script was used to create a demographics table and analyse nicotine data (particularly
+# demographic data)
+
 rm(list=ls())
 #load required libraries
 library(gtsummary)
@@ -10,11 +13,11 @@ library(writexl)
 library(Jmisc)
 
 #read in excel file
-tobacco <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-OlfactoryQuestionnai_DATA_2023-06-05_0228.csv")
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-scid <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-SCID5NDAJuly2023_DATA_2023-08-28_0342.csv")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
-tiv <- read_csv("/home/gucci/Documents/input/asegstats.csv")
+tobacco <- read_csv("HumanConnectomeProje-OlfactoryQuestionnai_DATA_2023-06-05_0228.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+scid <- read_csv("HumanConnectomeProje-SCID5NDAJuly2023_DATA_2023-08-28_0342.csv")
+subs <- read_csv("caselist.csv")
+tiv <- read_csv("asegstats.csv")
 
 #change label of ID column
 names(tiv)[1] <- "ID"
