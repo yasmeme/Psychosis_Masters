@@ -9,8 +9,8 @@ library(patchwork)
 library(pwr)
 library(stringr)
 # Dataframes --------------------------------------------------------------
-fbameans <- read_csv("/home/gucci/Documents/input/fba_all_means.csv")
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+fbameans <- read_csv("fba_all_means.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
 fbameans$ID <- substring(fbameans$ID, 5, nchar(fbameans$ID) +4)
 means <- merge(demog, fbameans, by = "ID", all = TRUE)
 means <- means[(demog$ID %in% fbameans$ID),]
@@ -261,7 +261,7 @@ box_FA_sig <- ggplot(data = means2, aes(y = Group, x = FA, color = factor(patien
 ((plot_sigFDC | box_FDC_sig) / (plot_sigFD | box_FD_sig) / (plot_sigFC | box_FC_sig) / (plot_sigFA | box_FA_sig)) +
   plot_layout(guides = 'collect' & theme(legend.position='top')) + plot_layout(axis_titles = "collect")
                     
-ggsave("/home/gucci/Documents/wholebrain_FBA.tiff", width = 6, height = 8)
+ggsave("~/wholebrain_FBA.tiff", width = 6, height = 8)
 
 
 # Significant Violin Plots ------------------------------------------------
@@ -327,7 +327,7 @@ violin=(violin_FD_sig / violin_FC_sig / violin_FDC_sig)
 
 plot(violin)
 
-ggsave(file="/home/gucci/Documents/violin_FBA.svg", plot=violin, width = 8, height = 15)
+ggsave(file="~/violin_FBA.svg", plot=violin, width = 8, height = 15)
 
 violin_tbss_sig <- ggplot(data = means, aes(y = Group, x = sigtbssFA, color = factor(patient))) +
   geom_violin() +
