@@ -6,11 +6,11 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-FAmean <- read_csv("/home/gucci/Documents/input/fa_means.csv")
-RDmean <- read_csv("/home/gucci/Documents/yasmin/mrstats_mean/RD_means.csv")
-ADmean <- read_csv("/home/gucci/Documents/yasmin/mrstats_mean/AD_means.csv")
-ADCmean <- read_csv("/home/gucci/Documents/yasmin/mrstats_mean/ADC_means.csv")
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+FAmean <- read_csv("fa_means.csv")
+RDmean <- read_csv("RD_means.csv")
+ADmean <- read_csv("AD_means.csv")
+ADCmean <- read_csv("ADC_means.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
 
 
 FAmean$ID <- substring(FAmean$ID, 5, nchar(FAmean$ID) +4)
