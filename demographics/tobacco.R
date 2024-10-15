@@ -374,7 +374,7 @@ px$Sex <- demean(px$Sex)
 px$TIV <- log(pxhc$TIV)
 px$TIV <- demean(pxhc$TIV)
 
-write_xlsx(pxhc,"/home/gucci/Documents/input/px_nicotineFD.xlsx")
+write_xlsx(pxhc,"~/px_nicotineFD.xlsx")
 
 #Is there an effect of smoking status on white matter, such that white matter 
 #integrity is highest in individuals with schizophrenia who never smoked 
@@ -401,7 +401,7 @@ px$Sex <- demean(px$Sex)
 px$TIV <- log(px$TIV)
 px$TIV <- demean(px$TIV)
 
-write_xlsx(px,"/home/gucci/Documents/input/nicotinelvlFC.xlsx")
+write_xlsx(px,"~/nicotinelvlFC.xlsx")
 
 #no interaction effect for nicotine, no need
 #pxhc2$`Smoking Status` <- as.numeric(pxhc2$`Smoking Status`)
