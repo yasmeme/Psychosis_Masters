@@ -18,7 +18,7 @@ echo ${start}
 echo ${SLURM_ARRAY_TASK_ID}
 
 case=`head -${SLURM_ARRAY_TASK_ID} ${caselist} | tail -1`
-home=/data/gpfs/projects/punim1958/DWIdata2023/harmonized_data/included
+home=/DWIdata2023/harmonized_data/included
 wd=${home}/${case}
 
 echo ${case}
