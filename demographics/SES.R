@@ -9,9 +9,9 @@ library(ggplot2)
 library(writexl)
 
 #read in excel file
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-pses <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-ParentalSESNDAJuly20_DATA_2023-08-28_0337.csv")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+pses <- read_csv("HumanConnectomeProje-ParentalSESNDAJuly20_DATA_2023-08-28_0337.csv")
+subs <- read_csv("caselist.csv")
 
 #change label of ID column
 
@@ -36,7 +36,7 @@ Group[which(total$Group == 0)] <- 'Control'
 pses2 <- as.data.frame(cbind(Group, total$ID, total$Age, total$Sex, total$father, total$father_s_educational_level, total$mother_s_employment_level, total$mother_s_educational_level, total$parental_socioeconomic_lev))
 names(pses2) <- c("Group", "ID", "Age", "Sex", "Father Employment Level", "Father Education Level", "Mother Employment Level", "Mother Education Level", "Parental SES Level")
 pses2 <- subset(pses2, !is.na(pses2$`Parental SES Level`))
-write_xlsx(pses2,"/home/gucci/Documents/matrices/SES.xlsx")
+write_xlsx(pses2,"/matrices/SES.xlsx")
 
 pses3 <- as.data.frame(cbind(pses2$Group, pses2$`Father Employment Level`, pses2$`Father Education Level`, pses2$`Mother Employment Level`, pses2$`Mother Education Level`, pses2$`Parental SES Level`))
 names(pses3) <- c("Group", "Father Employment Level", "Father Education Level", "Mother Employment Level", "Mother Education Level", "Parental SES Level")
