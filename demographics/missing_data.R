@@ -11,8 +11,8 @@ library(Jmisc)
 library(normalize)
 
 #import demog and subjects with imaging data
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+subs <- read_csv("caselist.csv")
 
 #list of subjects with imaging data from spartan (excluding subjects with poor image quality)
 #made using ls > subjects.txt
