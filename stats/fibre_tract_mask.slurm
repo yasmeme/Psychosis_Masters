@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #SBATCH -o output/out_o.%A_%a
 #SBATCH -e output/err_e.%A_%a
 #SBATCH --mem=500G
