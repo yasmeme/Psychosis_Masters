@@ -241,7 +241,7 @@ smokinggraphics=(nic_FD | pnic_FD)/(nic_FC | pnic_FC)/(nic_FDC |pnic_FDC)
 
 fa=((nic_mrFA | nic_tbFA) / (pnic_mrFA | pnic_tbFA))
 
-ggsave(file="/home/gucci/Documents/bothnicotine2.svg", plot=smokinggraphics, width = 14, height = 8)
+ggsave(file="bothnicotine2.svg", plot=smokinggraphics, width = 14, height = 8)
 
 # Cannabis ------------------------------------------------
 cannabis <- rep(NA,length(means$ID))
@@ -387,7 +387,7 @@ plot(can_FD)
 
 cannabisgraphic=(can_FD | can_FC | can_FDC) / (pcan_FD | pcan_FC | pcan_FDC)
 
-ggsave(file="/home/gucci/Documents/bothcannabis2.svg", plot=cannabisgraphic, width = 14, height = 8)
+ggsave(file="bothcannabis2.svg", plot=cannabisgraphic, width = 14, height = 8)
 
 
 # Demographics ------------------------------------------------------------
