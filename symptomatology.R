@@ -8,12 +8,12 @@ library(readr)
 library(dplyr)
 
 #read files in
-diagnosis <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-DiagnosisNDAJuly2023_DATA_2023-08-07_0228.csv")
-panss <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-PANSSUpdatedNDAJuly2_DATA_2023-08-07_0217.csv")
-madrss <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-MADRSNDAJuly2023_DATA_2023-08-07_0218.csv")
-wasi <- read_csv("/home/gucci/Documents/input/HumanConnectomeProje-WASIIINDAJuly2023_DATA_2023-08-07_0219.csv")
-demog <- read_excel("/home/gucci/Documents/input/Matching_samples_image_blood_pbmcs_July_2023.xlsx")
-subs <- read_csv("/home/gucci/Documents/input/caselist.csv")
+diagnosis <- read_csv("HumanConnectomeProje-DiagnosisNDAJuly2023_DATA_2023-08-07_0228.csv")
+panss <- read_csv("HumanConnectomeProje-PANSSUpdatedNDAJuly2_DATA_2023-08-07_0217.csv")
+madrss <- read_csv("HumanConnectomeProje-MADRSNDAJuly2023_DATA_2023-08-07_0218.csv")
+wasi <- read_csv("HumanConnectomeProje-WASIIINDAJuly2023_DATA_2023-08-07_0219.csv")
+demog <- read_excel("Matching_samples_image_blood_pbmcs_July_2023.xlsx")
+subs <- read_csv("caselist.csv")
 
 #make column 1 name match so NA values can be excluded
 names(diagnosis)[1] <- "ID"
